@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  /* Forest green theme with a harvest-gold accent */
+  --color-forest-950: #072516;
+  --color-forest-900: #0d3b24;
+  --color-forest-800: #14532d;
+  --color-forest-700: #1b6b3a;
+  --color-forest-600: #248a4b;
+  --color-leaf-soft: #e4f1e8;
+  --color-gold: #d9a21b;
+  --color-gold-light: #f2cf7a;
+  --color-gold-soft: #fbf0d3;
+  --color-sand: #f7f5ee;
+  --color-sand-deep: #e7e2d0;
+  --color-ink: #14241b;
+  --color-muted: #566459;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Manrope', system-ui, sans-serif;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #fff; }
+a { text-decoration: none; color: inherit; }
+button { font: inherit; cursor: pointer; }
+img { max-width: 100%; display: block; }
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+}
+
+:focus-visible { outline: 3px solid var(--color-forest-700); outline-offset: 3px; border-radius: 6px; }
+
+.container { width: min(1200px, 92%); margin-inline: auto; }
+.section-padding { padding-block: 5.5rem; }
+@media (max-width: 768px) { .section-padding { padding-block: 3.25rem; } }
+
+/* Plain surfaces (pattern removed) */
+.gingham { background-color: #fff; }
+.gingham-dark { background: none; }
+.gingham-strip { height: 4px; background: var(--color-gold); }
+
+.tone-blue { background: linear-gradient(145deg, #d6ebdc, #f3faf5); }
+.tone-sand { background: linear-gradient(145deg, #f6ead0, #fcf9f0); }
+.tone-rose { background: linear-gradient(145deg, #e9efc9, #f9fbe9); }
+
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.rise-2 { animation-delay: 0.12s; }
+.rise-3 { animation-delay: 0.24s; }
+@media (prefers-reduced-motion: reduce) {
+  .rise { animation: none; }
+  html { scroll-behavior: auto; }
+}
