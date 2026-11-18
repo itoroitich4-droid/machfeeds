@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, MessageCircle, ShieldCheck, Truck, Phone } from 'lucide-react'
+import { ArrowLeft, ArrowRight, MessageCircle, ShieldCheck, Truck, Phone, CheckCircle2, Users, Info } from 'lucide-react'
 import ItemImage from '../components/ItemImage'
 import { ProductCard } from '../components/Cards'
 import { products, categoryMeta } from '../data/products'
@@ -65,7 +65,50 @@ function ProductDetails() {
         </div>
       </section>
 
-      <section className="section-padding">
+      {product.overview && (
+        <section className="section-padding">
+          <div className="container grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+            <div>
+              <h2 className="mb-6 text-3xl font-semibold text-forest-900">About this feed</h2>
+              {product.overview.map((para, i) => (
+                <p key={i} className="mb-5 leading-8 text-muted">{para}</p>
+              ))}
+              {product.feedingNotes && (
+                <div className="mt-8 flex gap-4 rounded-2xl bg-sand/70 p-6">
+                  <Info size={22} className="mt-1 shrink-0 text-forest-700" />
+                  <div>
+                    <h3 className="mb-1 text-lg font-semibold text-forest-900">Feeding notes</h3>
+                    <p className="text-sm leading-7 text-muted">{product.feedingNotes}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <aside className="space-y-6">
+              {product.highlights && (
+                <div className="rounded-2xl border border-sand-deep bg-white p-7 shadow-sm">
+                  <h3 className="mb-4 text-lg font-semibold text-forest-900">Key benefits</h3>
+                  <ul className="space-y-3">
+                    {product.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-3 text-sm leading-6 text-ink">
+                        <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-forest-700" /> {h}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {product.suitableFor && (
+                <div className="rounded-2xl border border-sand-deep bg-white p-7 shadow-sm">
+                  <h3 className="mb-3 flex items-center gap-2 text-lg font-semibold text-forest-900"><Users size={18} className="text-forest-700" /> Suitable for</h3>
+                  <p className="text-sm leading-7 text-muted">{product.suitableFor}</p>
+                </div>
+              )}
+            </aside>
+          </div>
+        </section>
+      )}
+
+      <section className="section-padding bg-sand/60">
         <div className="container">
           <div className="mb-10 flex items-end justify-between gap-4">
             <h2 className="text-3xl font-semibold text-forest-900">You may also like</h2>

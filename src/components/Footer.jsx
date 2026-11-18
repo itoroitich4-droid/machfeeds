@@ -14,7 +14,7 @@ function Footer() {
             <h2 className="font-display text-2xl font-bold">Mach Feeds</h2>
           </div>
           <p className="mb-4 max-w-sm text-sm leading-7 text-green-100/80">
-            Quality animal nutrition for healthier livestock and better productivity. Think of quality? Think Mach Feeds.
+            Quality animal nutrition for healthier livestock and better productivity. Think of quality? Think Mach Feeds LTD.
           </p>
           <p className="font-display text-lg italic text-[#f2cf7a]">Quality You Can Trust.</p>
         </div>

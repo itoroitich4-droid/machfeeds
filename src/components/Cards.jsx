@@ -36,19 +36,19 @@ export function ProductCard({ product }) {
 export function MaterialCard({ material }) {
   return (
     <Link
-      to="/contact"
-      aria-label={`Enquire about ${material.name}`}
+      to={`/raw-materials/${material.slug}`}
+      aria-label={`View details for ${material.name}`}
       className="group relative block overflow-hidden rounded-2xl shadow-md transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
     >
       <ItemImage src={material.image} alt={material.name} emoji={material.emoji} tone={material.tone} ratio="aspect-[4/5]" bar={false} />
       <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/55 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-6 text-white">
         <h3 className="mb-2 text-2xl font-semibold">{material.name}</h3>
-        <p className="max-h-0 overflow-hidden text-sm leading-6 text-green-100/90 opacity-0 transition-all duration-500 group-hover:max-h-32 group-hover:opacity-100 max-sm:max-h-none max-sm:opacity-100">
+        <p className="max-h-0 overflow-hidden text-sm leading-6 text-green-100/90 opacity-0 transition-all duration-500 group-hover:max-h-40 group-hover:opacity-100 max-sm:max-h-none max-sm:opacity-100">
           {material.description}
         </p>
         <span className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-gold-light">
-          Make an enquiry <ArrowUpRight size={16} />
+          View details <ArrowUpRight size={16} />
         </span>
       </div>
     </Link>

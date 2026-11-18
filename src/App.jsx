@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -8,6 +8,7 @@ import About from './pages/About'
 import Products from './pages/Products'
 import ProductDetails from './pages/ProductDetails'
 import RawMaterials from './pages/RawMaterials'
+import RawMaterialDetails from './pages/RawMaterialDetails'
 import Services from './pages/Services'
 import Location from './pages/Location'
 import Contact from './pages/Contact'
@@ -17,7 +18,7 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollToTop />
       <div className="flex min-h-screen flex-col">
         <Navbar />
@@ -29,6 +30,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/:slug" element={<ProductDetails />} />
             <Route path="/raw-materials" element={<RawMaterials />} />
+            <Route path="/raw-materials/:slug" element={<RawMaterialDetails />} />
             <Route path="/services" element={<Services />} />
             <Route path="/location" element={<Location />} />
             <Route path="/contact" element={<Contact />} />
@@ -38,7 +40,7 @@ function App() {
 
         <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

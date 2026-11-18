@@ -27,7 +27,7 @@ function Navbar() {
     <header className={`sticky top-0 z-50 bg-white/95 backdrop-blur transition-shadow ${scrolled ? 'shadow-md' : ''}`}>
       <div className="hidden bg-forest-900 text-xs text-green-100 md:block">
         <div className="container flex items-center justify-between py-2">
-          <p>Think Quality? Think Mach Feeds. · Thika, Kenya</p>
+          <p>Think Quality? Think Mach Feeds LTD. · Thika, Kenya</p>
           <a href="tel:+254721325676" className="inline-flex items-center gap-2 font-semibold hover:text-white">
             <Phone size={13} /> +254 721 325 676
           </a>
